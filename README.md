@@ -8,6 +8,13 @@ Disease Diagnosis: a rule-based scoring tool for immunological diseases.
 Antigen Analysis: a sequence-based heuristic that finds hydrophilic candidate regions in an amino-acid sequence.
 
 Disclaimer: This is an educational project. It uses simple rule-based logic. It is not medical advice, not a clinical diagnosis, and not an experimentally confirmed epitope prediction. It contains no machine learning.
+## AI Assistance Disclosure
+
+This project was developed with assistance from an AI tool (Claude by Anthropic).
+AI was used for: code drafting (GTK GUI), debugging build errors,
+README.
+I reviewed, compiled, tested and understand the code, and I am responsible
+for the final submission.
 
 Features
 Tab 1: Disease Diagnosis
@@ -83,9 +90,11 @@ MKVLAAGIVLLAFSEEKDRNQEKSTDNLLWFVVGAAIMKQEDRSNTHEKKDLPGAFLIVC
 Error tests: MKVLXBZ (invalid letters) and abc in a lab field (not a number).
 
 Project structure
+
 .
 ├── immuno_gui.c    # complete source code
 └── README.md
+
 Limitations
 Scoring weights and cutoffs are simplified and not clinically validated.
 Hydrophilicity is a simple residue-class count, not a validated epitope predictor.
