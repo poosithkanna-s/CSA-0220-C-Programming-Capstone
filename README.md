@@ -142,7 +142,7 @@ Expected: 60 residues, with hydrophilic regions at 13-28 and 38-52.
 ## AI Assistance Disclosure
 
 This project was developed with assistance from an AI tool (Claude by Anthropic).
-AI was used for: drafting the C and GTK GUI code, helping with build and
-installation errors, and drafting the README and presentation.
+AI was used for: drafting the GTK GUI code, helping with build and
+installation errors, and drafting the README.
 I reviewed, compiled, tested and understand the code, and I am responsible
 for the final submission.
