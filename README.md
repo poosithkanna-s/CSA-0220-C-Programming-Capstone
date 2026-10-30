@@ -4,10 +4,12 @@ Course: CSA0220 - C Programming Author: Poosith Kanna S Language: C (C99) with t
 
 A desktop application written in C that combines two immunology tools in one window:
 
-Disease Diagnosis: a rule-based scoring tool for immunological diseases.
+##Disease Diagnosis: 
+a rule-based scoring tool for immunological diseases.
 Antigen Analysis: a sequence-based heuristic that finds hydrophilic candidate regions in an amino-acid sequence.
 
-Disclaimer: This is an educational project. It uses simple rule-based logic. It is not medical advice, not a clinical diagnosis, and not an experimentally confirmed epitope prediction. It contains no machine learning.
+##Disclaimer: 
+This is an educational project. It uses simple rule-based logic. It is not medical advice, not a clinical diagnosis, and not an experimentally confirmed epitope prediction. It contains no machine learning.
 ## AI Assistance Disclosure
 
 This project was developed with assistance from an AI tool (Claude by Anthropic).
@@ -16,7 +18,8 @@ README.
 I reviewed, compiled, tested and understand the code, and I am responsible
 for the final submission.
 
-Features
+
+##Features
 Tab 1: Disease Diagnosis
 11 tick boxes for symptoms and antibody markers (for example joint pain, butterfly rash, ANA positive, anti-dsDNA positive).
 4 optional lab value fields: Rheumatoid factor, Anti-CCP, CRP and ESR. Blank fields are ignored.
@@ -44,13 +47,15 @@ Callbacks	GTK button-click handlers
 Input validation	Checks for invalid letters and bad numbers
 How the scoring works
 
-Diagnosis: each symptom, marker and abnormal lab has a weight for each disease. A disease score is the sum of the weights that apply, divided by the maximum possible weight, as a percentage. A lab value only counts when it is above its cutoff (for example RF above 20 IU/mL), and a lab left blank is not included in the maximum.
+##Diagnosis: 
+each symptom, marker and abnormal lab has a weight for each disease. A disease score is the sum of the weights that apply, divided by the maximum possible weight, as a percentage. A lab value only counts when it is above its cutoff (for example RF above 20 IU/mL), and a lab left blank is not included in the maximum.
 
-Antigen: residues AVILMFWC count as hydrophobic and DEKRNQSTH as hydrophilic. A 6-residue window is flagged when at least 5 of its residues are hydrophilic. Overlapping flagged windows are merged into one region.
+##Antigen: 
+residues AVILMFWC count as hydrophobic and DEKRNQSTH as hydrophilic. A 6-residue window is flagged when at least 5 of its residues are hydrophilic. Overlapping flagged windows are merged into one region.
 
 Weights and cutoffs are simplified teaching values.
 
-Requirements
+##Requirements
 A C compiler (GCC)
 GTK 3 development files
 pkg-config
@@ -64,13 +69,13 @@ bash
 sudo apt install build-essential libgtk-3-dev
 Build and run
 
-Windows (MINGW64 terminal):
+##Windows (MINGW64 terminal):
 
 bash
 gcc immuno_gui.c -o immuno_gui.exe `pkg-config --cflags --libs gtk+-3.0`
 ./immuno_gui.exe
 
-Linux:
+##Linux:
 
 bash
 gcc immuno_gui.c -o immuno_gui `pkg-config --cflags --libs gtk+-3.0`
@@ -78,11 +83,11 @@ gcc immuno_gui.c -o immuno_gui `pkg-config --cflags --libs gtk+-3.0`
 
 Run it from the MINGW64 terminal on Windows so the GTK DLLs are found. To start it by double-clicking, add C:\msys64\mingw64\bin to your Windows PATH.
 
-Sample inputs
+##Sample inputs
 
 Diagnosis test: tick Morning stiffness > 1 hour and Joint pain / swelling, then enter RF 45 and Anti-CCP 60. Rheumatoid arthritis should score highest.
 
-Antigen test:
+##Antigen test:
 
 >Example_Antigen
 MKVLAAGIVLLAFSEEKDRNQEKSTDNLLWFVVGAAIMKQEDRSNTHEKKDLPGAFLIVC
@@ -95,7 +100,7 @@ Project structure
 ├── immuno_gui.c    # complete source code
 └── README.md
 
-Limitations
+##Limitations
 Scoring weights and cutoffs are simplified and not clinically validated.
 Hydrophilicity is a simple residue-class count, not a validated epitope predictor.
 Only three diseases and four lab tests are included.
